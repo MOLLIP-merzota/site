@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>NeoMarket - Forged Carbon Design</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="window.css" type="text/css"/>
+        <link rel="icon" href="image/Новая папка/photo_2025-02-11_22-52-33.jpg" type="image/png">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+</head>
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <nav class="fixed w-full bg-white shadow-lg z-50">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center">
+                <a href="#" class="text-2xl font-bold text-gray-800 gradient-text flex items-center">
+                    <img src="image/Новая папка/photo_2025-02-11_23-39-05.jpg" alt="logo" class="w-6 h-6 mr-2">
+                    NeoMarket
+                </a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <div class="relative">
+                    <a href="#" class="text-2xl font-bold text-gray-800 gradient-text flex items-center hover:text-blue-600">
+                        Каталог
+                    </a>
+                    <div class="absolute hidden w-64 mt-2 bg-white rounded-md shadow-lg">
+                        <div class="py-1">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Все товары</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Электроника</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Аксессуары</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <a href="#" class="text-2xl font-bold text-gray-800 gradient-text flex items-center hover:text-blue-600">
+                        Наушники
+                    </a>
+                    <div class="absolute hidden w-64 mt-2 bg-white rounded-md shadow-lg">
+                        <div class="py-1">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">AirPods Pro 2</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Beats Studio 3</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">JBL Live 200</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <a href="#" class="text-2xl font-bold text-gray-800 gradient-text flex items-center hover:text-blue-600">
+                        Часы
+                    </a>
+                    <div class="absolute hidden w-64 mt-2 bg-white rounded-md shadow-lg">
+                        <div class="py-1">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Apple Watch Series 10</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Samsung Galaxy Watch 6</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Garmin Forerunner 95</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <a href="#" class="text-2xl font-bold text-gray-800 gradient-text flex items-center hover:text-blue-600">
+                        Поддержка
+                    </a>
+                    <div class="absolute hidden w-64 mt-2 bg-white rounded-md shadow-lg">
+                        <div class="py-1">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Контакты</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">FAQ</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Обратная связь</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center space-x-6">
+                <input
+                    type="text"
+                    placeholder="Поиск..."
+                    class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                    oninput="searchProducts()"
+                />
+                <div class="relative">
+                    <button class="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="font-bold">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+  <!-- Hero Section -->
+  <header class="relative h-screen flex items-center justify-center bg-gradient-to-r from-blue-600 to-purple-600">
+    <div class="text-center animate-fade-in" data-aos="fade-up">
+      <h1 class="text-5xl font-bold mb-4 text-white gradient-text">Ваш Универсальный Магазин</h1>
+      <p class="text-xl text-white opacity-90">Новейшие гаджеты по доступным ценам</p>
+    </div>
+  </header>
+
+  <!-- Product Catalog -->
+  <main class="max-w-7xl mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Product Cards with Animations -->
+      <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:shadow-xl">
+        <img src="image/airpods/photo_2025-02-10_00-53-01.jpg" alt="Наушники" class="w-full h-64 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">AirPods Pro 2</h3>
+          <p class="text-gray-600 mb-4">Удобные и стильные наушники для любого использования</p>
+          <div class="flex justify-between items-center">
+            <span class="text-2xl font-bold text-blue-600">2150 ₽</span>
+            <button onclick="addToCart('Наушники')" class="btn-primary px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+              Добавить в корзину
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Repeat similar product cards -->
+      <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:shadow-xl">
+        <img src="image/watch/photo_1_2025-02-11_22-30-28.jpg" alt="Часы" class="w-full h-64 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">apple watch 10-я серия 46mm</h3>
+          <p class="text-gray-600 mb-4">Современные и элегантные часы для вашего стиля</p>
+          <div class="flex justify-between items-center">
+            <span class="text-2xl font-bold text-blue-600">2750 ₽</span>
+            <button onclick="addToCart('часы')" class="btn-primary px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+              Добавить в корзину
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:shadow-xl">
+        <img src="image/macsafe/photo_1_2025-02-11_22-30-49.jpg" alt="Зарядка" class="w-full h-64 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">APPLE BATTERY PACK TYPE-C </h3>
+          <p class="text-gray-600 mb-4">Удобный и компактный повербанк</p>
+          <div class="flex justify-between items-center">
+            <span class="text-2xl font-bold text-blue-600">1500 ₽</span>
+            <button onclick="addToCart('зарядки')" class="btn-primary px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+              Добавить в корзину
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more product cards -->
+    </div>
+  </main>
+
+  <!-- Footer with Social Media -->
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div data-aos="fade-right">
+          <h3 class="text-xl font-bold mb-4">О нас</h3>
+          <p>Мы рады предложить вам широкий выбор электроники по доступным ценам.</p>
+        </div>
+        <div data-aos="fade-left">
+          <h3 class="text-xl font-bold mb-4">Контакты</h3>
+          <ul class="space-y-2">
+            <li class="flex items-center">
+              <i class="fas fa-phone mr-2"></i>+7 914 177 12-95
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-envelope mr-2"></i>info@Neomark.com
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-map-marker-alt mr-2"></i>Россия, Москва
+            </li>
+          </ul>
+        </div>
+        <div data-aos="fade-up">
+          <h3 class="text-xl font-bold mb-4">Следите за нами</h3>
+          <div class="flex space-x-4">
+            <a href="https://t.me/lNeoMarketl" class="text-white hover:text-purple-400 transition-colors">
+              <i class="fab fa-telegram"></i>
+            </a>
+            <a href="#" class="text-white hover:text-purple-400 transition-colors">
+              <i class="fab fa-vk"></i>
+            </a>
+            <a href="#" class="text-white hover:text-purple-400 transition-colors">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors" onclick="scrollToTop()">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+    AOS.init({
+            duration: 100,
+            once: false, // Теперь анимации будут работать постоянно
+            disable: function() {
+                return false; // Отключим автоматическое отключение анимаций
+            }
+        });
+
+        // Добавим обработчик прокрутки для перезапуска анимаций
+        window.addEventListener('scroll', function() {
+            // Сбросим анимации для всех элементов
+            document.querySelectorAll('.aos-animate').forEach(element => {
+                element.classList.remove('aos-animate');
+                AOS.init({
+                    duration: 500,
+                    once: false
+                });
+            });
+        });
+
+    function addToCart(productName) {
+        let cartCount = parseInt(document.getElementById('cart-count').textContent);
+        cartCount++;
+        document.getElementById('cart-count').textContent = cartCount;
+        alert(`Товар ${productName} добавлен в корзину!`);
+    }
+
+    function searchProducts() {
+        const searchTerm = document.querySelector('input[type="text"]').value.toLowerCase();
+        const productCards = document.querySelectorAll('.product-card');
+        
+        productCards.forEach(card => {
+            const productName = card.querySelector('h3').textContent.toLowerCase();
+            if (productName.includes(searchTerm)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // Скрипты для плавной прокрутки
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+
+    document.querySelectorAll('.relative').forEach(menu => {
+        const link = menu.querySelector('a');
+        const dropdown = menu.querySelector('div');
+        
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            dropdown.style.animation = 'dropdown 0.3s ease-out';
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+    });
+
+    // Скрипты для кнопки "Вернуться наверх"
+    window.onscroll = function() {
+        const scrollToTopBtn = document.querySelector('.fixed.bottom-8.right-8');
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollToTopBtn.style.display = 'block';
+        } else {
+            scrollToTopBtn.style.display = 'none';
+        }
+    };
+
+    function scrollToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+</body>
+</html>
